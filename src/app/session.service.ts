@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+// import { SessionService } from "./session.service";
+
 
 @Injectable()
 export class SessionService {
