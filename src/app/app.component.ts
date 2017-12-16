@@ -9,7 +9,10 @@ import { SessionService} from './session.service'
 export class AppComponent implements OnInit {
 
   formInfo = {
+    firstName: '',
+    lastName: '',
     username: '',
+    email: '',
     password: ''
   };
     user: any;
