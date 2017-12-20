@@ -3,11 +3,11 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
-// import { SessionService } from "./session.service";
 
 
 @Injectable()
 export class SessionService {
+  BASE_URL: string = 'http://localhost:3000';
 
   constructor(private http: Http) { }
 
@@ -16,31 +16,31 @@ export class SessionService {
   }
 
   signup(user) {
-    return this.http.post(`/signup`, user)
+    return this.http.post(`${this.BASE_URL}/auth-routes/signup`, user)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   login(user) {
-    return this.http.post(`/login`, user)
+    return this.http.post(`${this.BASE_URL}/auth-routes/login`, user)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   logout() {
-    return this.http.post(`/logout`, {})
+    return this.http.post(`${this.BASE_URL}/auth-routes/logout`, {})
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   isLoggedIn() {
-    return this.http.get(`/loggedin`)
+    return this.http.get(`${this.BASE_URL}/auth-routes/loggedin`)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   getPrivateData() {
-    return this.http.get(`/private`)
+    return this.http.get(`${this.BASE_URL}/auth-routes/private`)
       .map(res => res.json())
       .catch(this.handleError);
   }

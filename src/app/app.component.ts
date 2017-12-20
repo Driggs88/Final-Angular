@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService} from './session.service'
+import { FileUploader } from "ng2-file-upload";
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,12 @@ import { SessionService} from './session.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  uploader: FileUploader = new FileUploader({
+  url: `/api/signup/`
+});
 
   formInfo = {
+    profilePic: '',
     firstName: '',
     lastName: '',
     username: '',
@@ -22,19 +27,19 @@ export class AppComponent implements OnInit {
   constructor(private session: SessionService) { }
 
   ngOnInit() {
-    this.session.isLoggedIn()
-      .subscribe(
-        (user) => this.successCb(user)
-      );
+    // this.session.isLoggedIn()
+    //   .subscribe(
+    //     (user) => this.successCb(user)
+    //   );
   }
 
-  login() {
-    this.session.login(this.formInfo)
-      .subscribe(
-        (user) => this.successCb(user),
-        (err) => this.errorCb(err)
-      );
-  }
+  // login() {
+  //   this.session.login(this.formInfo)
+  //     .subscribe(
+  //       (user) => this.successCb(user),
+  //       (err) => this.errorCb(err)
+  //     );
+  // }
 
   signup() {
     this.session.signup(this.formInfo)
@@ -44,21 +49,21 @@ export class AppComponent implements OnInit {
       );
   }
 
-  logout() {
-    this.session.logout()
-      .subscribe(
-        () => this.successCb(null),
-        (err) => this.errorCb(err)
-      );
-  }
+  // logout() {
+  //   this.session.logout()
+  //     .subscribe(
+  //       () => this.successCb(null),
+  //       (err) => this.errorCb(err)
+  //     );
+  // }
 
-  getPrivateData() {
-    this.session.getPrivateData()
-      .subscribe(
-        (data) => this.privateData = data,
-        (err) => this.error = err
-      );
-  }
+  // getPrivateData() {
+  //   this.session.getPrivateData()
+  //     .subscribe(
+  //       (data) => this.privateData = data,
+  //       (err) => this.error = err
+  //     );
+  // }
 
   errorCb(err) {
     this.error = err;

@@ -4,6 +4,8 @@ import { SessionService } from "./session.service";
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import { FileUploadModule } from "ng2-file-upload";
+
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpModule,
     FormsModule,
+    FileUploadModule,
   ],
   providers: [ SessionService ],
   bootstrap: [AppComponent]
