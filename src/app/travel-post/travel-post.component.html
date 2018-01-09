@@ -1,3 +1,67 @@
-<p>
-  travel-post works!
+<header>
+  <p> Hello, {{ currentUser.fullName }}. </p>
+
+  <button (click)="logMeOutPls()"> Log Out </button>
+  <p *ngIf="logoutError" class="error">
+    {{ logoutError }}
+  </p>
+</header>
+
+<h2> Travel Post List </h2>
+
+<p *ngIf="travelPostError" class="error">
+  {{ travelPostError }}
 </p>
+
+<button *ngIf="!isShowingForm" (click)="showTravelPostForm()">
+  Add Travel Post
+</button>
+
+<div *ngIf="isShowingForm">
+  <h3> Add a New Travel Post </h3>
+
+  <p *ngIf="saveError" class="error">
+    {{ saveError }}
+  </p>
+
+  <form (ngSubmit)="saveNewTravelPost()">
+    <label for="travel-post-title-input"> Travel Post Title </label>
+    <input  id="travel-post-title-input" type="text" placeholder="Travel Zone"
+        [(ngModel)]="travelPostInfo.travelTitle" name="travelTitle">
+    <br>
+
+    <label for="travel-post-description-input"> Travel Description </label>
+    <input  id="travel-post-description-inpu" type="text"
+        [(ngModel)]="travelPostInfo.travelDescription" name="travelDescription">
+    <br>
+
+    <label for="travel-post-picture-input"> Travel Picture (optional)</label>
+    <input  id="travel-post-picture-inpu" type="file" name="travelPicture"
+        ng2FileSelect [uploader]="myNewUploader">
+    <br>
+
+    <button> Save Travel Post </button>
+  </form>
+</div>
+
+<ul>
+  <li *ngFor="let oneTravelPost of travelPostArray">
+    <h3> {{ oneTravelPost.name }} </h3>
+
+    <div class="picture-wrap">
+      <img *ngIf="oneTravelPost.picture"
+          [src]="baseUrl + oneTravelPost.picture">
+    </div>
+
+    <p>
+      Owned by:
+      <b *ngIf="oneTravelPost.user?._id !== currentUser._id">
+        {{ oneTravelPost.user?.fullName }}
+      </b>
+
+      <b *ngIf="oneTravelPost.user?._id === currentUser._id">
+        YOU
+      </b>
+    </p>
+  </li>
+</ul>
