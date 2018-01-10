@@ -25,12 +25,12 @@ export class TravelPostComponent implements OnInit {
   travelPostInfo = {
     travelTitle: "",
     travelDescription: "",
-  }
+  };
 
   saveError: string;
 
   myNewUploader = new FileUploader({
-    url: environment.apiBase + '/api/TravelPost',
+    url: environment.apiBase + '/api/travelPost',
     itemAlias: 'travelPicture'
   });
 

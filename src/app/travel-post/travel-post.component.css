@@ -1,0 +1,26 @@
+.error {
+  padding: 15px;
+  border: 2px solid crimson;
+  border-radius: 3px;
+  display: inline-block;
+  color: crimson;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  overflow: auto;
+}
+
+li {
+  float: left;
+}
+
+.picture-wrap {
+  width: 200px;
+  height: 250px;
+}
+
+img {
+  max-width: 100%;
+}
