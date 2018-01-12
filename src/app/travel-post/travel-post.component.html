@@ -31,12 +31,12 @@
     <br>
 
     <label for="travel-post-description-input"> Travel Description </label>
-    <input  id="travel-post-description-inpu" type="text"
+    <input  id="travel-post-description-input" type="text"
         [(ngModel)]="travelPostInfo.travelDescription" name="travelDescription">
     <br>
 
     <label for="travel-post-picture-input"> Travel Picture (optional)</label>
-    <input  id="travel-post-picture-inpu" type="file" name="travelPicture"
+    <input  id="travel-post-picture-input" type="file" name="travelPicture"
         ng2FileSelect [uploader]="myNewUploader">
     <br>
 
@@ -44,13 +44,14 @@
   </form>
 </div>
 
+<div class="">
 <ul>
   <li *ngFor="let oneTravelPost of travelPostArray">
-    <h3> {{ oneTravelPost.name }} </h3>
+    <h3> {{ oneTravelPost.title }} </h3>
+    <p>{{ oneTravelPost.description }}</p>
 
     <div class="picture-wrap">
-      <img *ngIf="oneTravelPost.picture"
-          [src]="baseUrl + oneTravelPost.picture">
+      <img *ngIf = "oneTravelPost.picture" [src]="baseUrl + oneTravelPost.picture">
     </div>
 
     <p>
@@ -65,3 +66,4 @@
     </p>
   </li>
 </ul>
+</div>
