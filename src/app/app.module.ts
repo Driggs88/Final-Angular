@@ -11,13 +11,17 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { TravelPostComponent } from './travel-post/travel-post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { PromotionsComponent } from './promotions/promotions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     TravelPostComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MainPageComponent,
+    PromotionsComponent
   ],
   imports: [
     BrowserModule,
