@@ -62,17 +62,17 @@
                       <img *ngIf="oneTravelPost.travelPhotos"
                           [src]="baseUrl + oneTravelPost.travelPhotos">
                           </div>
-                           <div class="blog-colum">
-                           <span>{{ oneTravelPost.title }}</span>
-                           <p>
-                           <b class="blog-detail list-inline" *ngIf="oneTravelPost.user?._id === currentUser._id"><i class="fa fa-user"></i>
-                           {{ oneTravelPost.user?.fullName }}
-                         </b>
-                       </p>
-        							<p>{{ oneTravelPost.description }}</p>
+                             <div class="blog-colum">
+                             <span>{{ oneTravelPost.title }}</span>
+                             <p>
+                             <b class="blog-detail list-inline" *ngIf="oneTravelPost.user?._id === currentUser._id"><i class="fa fa-user"></i>
+                             {{ oneTravelPost.user?.fullName }}
+                           </b>
+                         </p>
+        							  <p>{{ oneTravelPost.description }}</p>
         						</div>
-        					</div>
-              </div>
-			    </div>
+        					 </div>
+                </div>
+			     </div>
     </div>
 </div>

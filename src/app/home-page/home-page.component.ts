@@ -36,7 +36,7 @@ export class HomePageComponent implements OnInit {
     this.authTool.checklogin()
     // If success, we are logged in.
     .then((resultFromApi) => {
-        this.routerTool.navigate(['/travelPost']);
+        this.routerTool.navigate(['/main-page']);
   })
 
   //Even is you don't do anything on error, catch to avoid a console error.
@@ -59,7 +59,7 @@ export class HomePageComponent implements OnInit {
       this.errorMessage = "";
 
       // redirect to /travelPost
-      this.routerTool.navigate(['/travelPost']);
+      this.routerTool.navigate(['/main-page']);
     })
     .catch((err) => {
       const parsedError = err.json();
@@ -80,7 +80,7 @@ export class HomePageComponent implements OnInit {
     this.loginErrorMessage = "";
 
     // redirect to travelPost
-    this.routerTool.navigate(['/travelPost']);
+    this.routerTool.navigate(['/main-page']);
   })
   .catch((err) => {
       const parsedError = err.json();

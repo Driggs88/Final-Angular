@@ -5,6 +5,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { TravelPostComponent } from './travel-post/travel-post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PromotionsComponent } from './promotions/promotions.component';
+import { MainPageComponent } from './main-page/main-page.component';
+
 
 const routes: Routes = [
   {
@@ -14,6 +16,10 @@ const routes: Routes = [
   {
     path: 'travelPost',
     component: TravelPostComponent
+  },
+  {
+    path: 'main-page',
+    component: MainPageComponent
   },
   {
     path: '**',

@@ -13,6 +13,7 @@ import { TravelPostComponent } from './travel-post/travel-post.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PromotionsComponent } from './promotions/promotions.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PromotionsComponent } from './promotions/promotions.component';
     TravelPostComponent,
     NotFoundComponent,
     MainPageComponent,
-    PromotionsComponent
+    PromotionsComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
