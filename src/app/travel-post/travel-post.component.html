@@ -55,88 +55,21 @@
                  </div>
             </div>
 
-           <div class="row">
-               <li *ngFor="let oneTravelPost of travelPostArray">
-
-			    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" data-aos="fade-right">
-
-                    <div class="col-lg-6 col-xs-12">
-                        <img src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					</div>
-
-					<div class="col-lg-6 col-xs-12">
-						 <div class="blog-column">
-							<span>Post Title</span>
-							 <ul class="blog-detail list-inline">
-								<li><i class="fa fa-user"></i>John Doe</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-							<a href="#">Read More</a>
-						</div>
-					</div>
-
-                </div>
-
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" data-aos="fade-right">
-
-                    <div class="col-lg-6 col-xs-12">
-                       <img src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					</div>
-
-					<div class="col-lg-6 col-xs-12">
-						 <div class="blog-colum">
-							<span>Post Title</span>
-							 <ul class="blog-detail list-inline">
-								<li><i class="fa fa-user"></i>Josh Doe</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-							<a href="#">Read More</a>
-						</div>
-					</div>
-
-                </div>
-
-           </div>
-
-		   <div style="margin:40px 0px;"></div>
-
-		   <div class="row">
-
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" data-aos="fade-right">
-
-                    <div class="col-lg-6 col-xs-12">
-                        <img src="https://images.pexels.com/photos/129441/pexels-photo-129441.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-					</div>
-
-					<div class="col-lg-6 col-xs-12">
-						 <div class="blog-colum">
-							<span>Post Title</span>
-							 <ul class="blog-detail list-inline">
-								<li><i class="fa fa-user"></i>James Doe</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-							<a href="#">Read More</a>
-						</div>
-					</div>
-
-                </div>
-
+           <div *ngFor="let oneTravelPost of travelPostArray" class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" data-aos="fade-right">
-
-                            <div class="col-lg-6 col-xs-12">
-                               <img src="https://images.pexels.com/photos/395196/pexels-photo-395196.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
-        					</div>
-
         					<div *ngFor="let oneTravelPost of travelPostArray" class="col-lg-6 col-xs-12">
-        						 <div class="blog-colum">
-                       <span>{{ oneTravelPost.title }}</span>
-                       <p>
-                         <b class="blog-detail list-inline" *ngIf="oneTravelPost.user?._id === currentUser._id"><i class="fa fa-user"></i>
+                    <div class="col-lg-6 col-xs-12">
+                      <img *ngIf="oneTravelPost.travelPhotos"
+                          [src]="baseUrl + oneTravelPost.travelPhotos">
+                          </div>
+                           <div class="blog-colum">
+                           <span>{{ oneTravelPost.title }}</span>
+                           <p>
+                           <b class="blog-detail list-inline" *ngIf="oneTravelPost.user?._id === currentUser._id"><i class="fa fa-user"></i>
                            {{ oneTravelPost.user?.fullName }}
                          </b>
                        </p>
         							<p>{{ oneTravelPost.description }}</p>
-        							<a href="#">Read More</a>
         						</div>
         					</div>
               </div>
